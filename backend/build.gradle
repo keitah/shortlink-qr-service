@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'org.keita'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Веб-приложение (REST API)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Работа с Redis через Spring Data
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // Валидация входящих данных (Bean Validation)
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // ZXing — генерация QR-кодов
+    implementation 'com.google.zxing:core:3.5.3'
+    implementation 'com.google.zxing:javase:3.5.3'
+
+    // Поддержка Java 8+ дат и времени (LocalDateTime и т.п.) для Jackson
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+    // Ломбок для уменьшения шаблонного кода
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
