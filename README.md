@@ -36,7 +36,7 @@ git clone https://github.com/keitah/shortlink-qr-service.git
 cd shortlink-qr-service
 docker compose up --build
 ```
-### После запуска:
+### 📋 После запуска:
 
 ```Сервис	URL
 Frontend	http://localhost:3000
@@ -87,5 +87,6 @@ shortlink-qr-service/<br>
 #### ❤️ Спасибо за интерес к проекту!
 
 #### Готов к продакшен-деплою и дальнейшему развитию 🚀
+
 
 
